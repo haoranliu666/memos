@@ -1,5 +1,4 @@
 ### todo
-- C
 - Matlab
 - R
 - Swift
