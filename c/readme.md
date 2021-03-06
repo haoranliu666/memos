@@ -1,6 +1,4 @@
 ###must do
-文件
-https://www.runoob.com/cprogramming/c-file-io.html
 
 内存管理
 https://www.runoob.com/cprogramming/c-memory-management.html
