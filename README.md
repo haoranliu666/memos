@@ -1,6 +1,4 @@
-# memos
-
-###todo
+### todo
 - C
 - Matlab
 - R
