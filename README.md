@@ -1,6 +1,9 @@
 ### todo
 - Matlab
 - R
-- Swift
 - C++
 - Latex
+
+### might do
+- Swift
+- Julia
