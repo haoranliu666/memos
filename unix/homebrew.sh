@@ -62,3 +62,12 @@ brew install --cask iterm2
 #https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac-os-x-7c1c7247d896
 #https://blog.csdn.net/qq_36838191/article/details/89208467
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+
+#####brew gui
+brew install cakebrew --cask
+
+#####brew-cask-upgrade
+brew tap buo/cask-upgrade
+
+brew cu #upgrade
