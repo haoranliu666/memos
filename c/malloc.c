@@ -11,24 +11,18 @@ int main()
 
     //malloc
     description = (char *)malloc( 30 * sizeof(char) );
-    if( description == NULL )
-    {
+    if( description == NULL ){
         fprintf(stderr, "Error - unable to allocate required memory\n");
-    }
-    else
-    {
+    }else{
         strcpy( description, "Zara ali a DPS student.");
     }
 
 
     //realloc
     description = (char *) realloc( description, 100 * sizeof(char) );
-    if( description == NULL )
-    {
+    if( description == NULL ){
         fprintf(stderr, "Error - unable to allocate required memory\n");
-    }
-    else
-    {
+    }else{
         strcat( description, "She is in class 10th");
     }
 
