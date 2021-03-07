@@ -1,9 +1,3 @@
-###must do
-
-内存管理
-https://www.runoob.com/cprogramming/c-memory-management.html
-
-
 ### todo
 switch.c
 
