@@ -1,3 +1,6 @@
+### eager to do
+- Julia
+
 ### todo
 - Matlab
 - R
@@ -6,4 +9,4 @@
 
 ### might do
 - Swift
-- Julia
+
