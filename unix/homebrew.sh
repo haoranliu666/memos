@@ -71,3 +71,10 @@ brew install cakebrew --cask
 brew tap buo/cask-upgrade
 
 brew cu #upgrade
+
+#####bpytop
+#https://github.com/aristocratos/bpytop
+brew install bpytop
+brew install hacker1024/hacker1024/coretemp
+
+bpytop
