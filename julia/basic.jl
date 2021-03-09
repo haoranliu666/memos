@@ -1,6 +1,8 @@
 #https://juliaobserver.com/packages
 #https://zhuanlan.zhihu.com/p/41802723
-
+# alias alias_name="command_to_run"
+# .zshrc
+# alias julia="exec /Applications/Julia-1.5.app/Contents/Resources/julia/bin/julia"
 exit()
 
 1 + 2
