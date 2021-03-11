@@ -10,6 +10,7 @@ int main(void) {
     char ch = 'c';
     putchar(ch);
 
+    bool a = true;
     int num1, num2, num3;
     const double num = 1.1;
 
