@@ -14,3 +14,8 @@ void swap(int &a, int &b) {
 
 // default value
 int sum(int a, int b=20);
+
+// pass an array to a function
+void myFunction(int *param);
+void myFunction(int param[10]);
+void myFunction(int param[]);
