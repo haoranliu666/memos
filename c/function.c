@@ -3,13 +3,15 @@
 #include <stdlib.h> 
 
 //pass by value
-int max(int num1, int num2);
+int max(int x, int y);
 //pass by address
-void max2(int num1, int num2, int *max);
+void max2(int x, int y, int *max);
 //pass an array
 double getAverage(int *arr, int size);
 //return a pointer
 int * getRandom(); //! static int *p 
+//paramater has a pointer to a function
+void what(int (*max)(int, int));
 int main (void)
 {
     int a = 100;
@@ -32,7 +34,6 @@ int main (void)
     avg = getAverage(balance, 5) ; 
     printf("Average value is: %f\n", avg);
 
-
     //return a pointer
     int *p;
 
@@ -42,28 +43,26 @@ int main (void)
         printf("*(p + [%d]) : %d\n", i, *(p + i) );
     }
 
+    //point to a function
+    int (* p2)(int, int) = & max;
+    ans = p2(1, 2);
+    printf("%d", ans);
+
     return 0;
 }
 
 
-int max(int num1, int num2)
+int max(int x, int y)
 {
-    int result;
-
-    if (num1 > num2)
-        result = num1;
-    else
-        result = num2;
-
-    return result;
+    return x > y ? x : y;
 }
 
-void max2(int num1, int num2, int *max)
+void max2(int x, int y, int *max)
 {
-    if (num1 > num2)
-        *max = num1;
+    if (x > y)
+        *max = x;
     else
-        *max = num2;
+        *max = y;
 }
 
 
