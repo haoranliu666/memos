@@ -1,10 +1,14 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello, world!" << endl;
+    string name;
+    cout << "What's your name" << endl;
+    cin >> name;
+    cout << "Hello, " << name << "!" << endl;
     
     //reference, another name of the variable
     int i = 17;
