@@ -1,7 +1,8 @@
 ### eager to do
-- Julia
+- SQL
 
 ### todo
+- Julia
 - Matlab
 - R
 - C++
