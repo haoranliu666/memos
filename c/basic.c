@@ -13,6 +13,12 @@ int main(void) {
     bool a = true;
     int num1, num2, num3;
     const double num = 1.1;
+
+        
+    int const * a //pointer to const int
+    const int * b //pointer to const int          
+    int * const c //pointer is const
+
     
     //force type change
     int a = (int)1.0
