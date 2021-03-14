@@ -5,6 +5,9 @@
 
 #include <stdio.h>
 
+#define LENGTH 10  
+typedef int feet;
+
 int main(void) {
 
     char ch = 'c';
