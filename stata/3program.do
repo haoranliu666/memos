@@ -1,99 +1,90 @@
 *define a program
+cap program drop myprog
 program define myprog
 version 16.0
-  display "Hello world!"
+	preserve
+		dis "Hello World"
+	restore
 end
 
+myprog
 
-*show all program
-program dir
+*全部单变量
+macro dir
+matrix dir
 
+*scalar
+scalar a = 3   
+scalar b = ln(a) + (3^4.2)/exp(2)
+dis a
+dis b
 
-*capture and display errors
-capture
-display _rc 
-
-
-*do not display outcome
-quietly{
-  reg x y
-}
-
-
-*preserve the data and restore it in program
-sysuse auto, clear
-  preserve
-    keep price weight foreign
-    sum
-  restore // restore to the preserved status
-sum
-
-
-*single variable in memory
-scalar a = 3
-scalar b = sin(a) + 3
-scalar s = "hello world!"
-scalar s2 = substr(s, 1, 5)
-
-
-*use specific observed value
-sysuse auto, clear
-dis price[3]
-list price in 1/3
-sort price
-
-
-*_N
-gen p_max = price[_N] // _N is the sample size
-
-*_n
-gen id = _n // _n is the current place of observed value
-sysuse sp500, clear
-gen close_lag = close[_n-1]
-
-
-*show all scalars
-sysuse auto, clear
-
+*
+sysuse "auto.dta", clear
 sum price
-return list // show all scalars in memory
-
-reg price wei len
-eret list // show all estimation result
-
+return list
+dis r(mean)
+reg price wei len mpg foreign
+ereturn list
+dis e(r2)
+matrix list e(b)
+dis _b[weight]
+dis _b[_cons]
 
 *local
-*only exists in one-time enviorment
 local a = 5
-display `a'
-local s = "hello world"
-display "`s'"
+dis `a'
 
 sysuse auto, clear
-local x "price"
-local y "weight rep78 length"
-reg `x' `y'
-
+local y "price"
+local x "weight rep78 length"
+reg `y' `x'
 
 *global
-*always exists
-global a = 5
-display `a'
+sysuse auto, clear
+global y "price"
+global x "weight rep78 length"
+reg $y $x
 
-macro dir
+*while
+local j = 0
+while `j'<5{
+  dis  `j'
+  local j = `j' + 1
+}
+
+*forvalues
+forvalues j = 1/5{
+	dis `j'
+}
+
+*foreach v of varlist
+sysuse auto,clear
+global vars "price weight length"
+foreach v of varlist $vars{
+gen ln_`v' = ln(`v')
+label variable ln_`v'  "ln(`v')" 
+}
+
+*取出、更改某个位置的变量
+sysuse auto, clear
+dis price[3]
+replace price = 5 in 4
 
 
+*if else
+scalar aa = 1   // 测试，修改为 aa==-1
+if aa==1{
+ dis "这小子真帅!"
+}
+else if aa==0{
+ dis "这女孩真靓!"
+}
+else{
+ dis "我晕!"
+}
 
-*add paramater and option into program
-*args
-
-program define show
-version 16.0
-args k
-  display `k'
-end
-
-*syntax
-
-
-
+*matrix
+matrix a = (1,2,3 \ 4,5,6)
+mat list a
+dis a[2,3]
