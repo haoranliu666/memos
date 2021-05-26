@@ -37,6 +37,17 @@ sysuse "nlsw88.dta", clear
 reg wage hours, vce(jackknife)
 reg wage hours, vce(bs,reps(300))
 
+*panel
+sysuse nlswork, clear
+replace year = 1900+year
+xtset id year
+xtdes
+xtreg ln_wage hours, fe //fixed effect
+xtreg ln_wage hours i.year, fe //+ time dummy
+xtreg ln_wage hours i.year, fe robust //robust time-corr
+xtreg ln_wage hours i.year, fe cluster(idcode) //cluster id-corr
+xtreg ln_wage hours, re //random efffect
+
 *dummy variable
 sysuse "nlsw88.dta", clear
 drop if union==.
