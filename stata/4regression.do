@@ -88,3 +88,15 @@ xtreg ln_wage hours i.year, fe //+ time dummy
 xtreg ln_wage hours i.year, fe robust //robust time-corr
 xtreg ln_wage hours i.year, fe cluster(idcode) //cluster id-corr
 xtreg ln_wage hours, re //random efffect
+
+*IV-2SLS
+*regress y on x1,x2
+*where x2 is endogenous, and z is its IV
+ivregress 2sls y x1 (x2 = z)
+
+*IV-GMM
+*一阶动态面板模型
+*regress y_it on y_i(t-1), x
+*where y_i(t-2), ..., y_i1 are iv of y_i(t-1)
+xtabond y x, twostep
+estat sargan //过度识别检验
