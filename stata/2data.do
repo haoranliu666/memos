@@ -95,4 +95,13 @@ gen month = substr(date1, 5, 2)
 gen day   = substr(date1, 7, 2)
 destring year month day, replace
 
+*stata数字格式日期
+format DATE %d
+gen year = year(date)
+gen month = month(date)
+gen day = day(date)
+keep if year < 1996
+keep if year == 1996 & month < 12
+keep if year == 1996 & month == 12 & day < 16
+
 
