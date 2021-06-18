@@ -193,3 +193,9 @@ webuse apple, clear
 sysuse auto, clear 
 
 display 1+1
+
+*变量名小写
+rename *, lower
+
+*每一个x的个数
+bysort x, egen coun = count(_n)
