@@ -79,7 +79,7 @@ est store m2
 lrtest m1 m2 //log-likelihood ratio test
 
 *panel
-sysuse nlswork, clear
+webuse nlswork, clear
 replace year = 1900+year
 xtset id year
 xtdes
