@@ -37,11 +37,11 @@ foreach y of varlist $ylist{
 		reghdfe `y' `x'  $control1 $control2, absorb(idcode) cluster(idcode)
 		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, ID) addstat(Adjusted R-squared, e(r2_a))
 		
-		reghdfe `y' `x', absorb(year year) cluster(idcode)
+		reghdfe `y' `x', absorb(year idcode) cluster(idcode)
 		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
-		reghdfe `y' `x' $control1, absorb(year year) cluster(idcode)
+		reghdfe `y' `x' $control1, absorb(year idcode) cluster(idcode)
 		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
-		reghdfe `y' `x' $control1 $control2, absorb(year year) cluster(idcode)
+		reghdfe `y' `x' $control1 $control2, absorb(year idcode) cluster(idcode)
 		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
 	}
 }
