@@ -15,6 +15,9 @@ clear all
 
 quiet
 
+*csv
+import delimited using /xxx.csv, clear
+
 *-产生新变量和修改旧变量
 sysuse auto, clear
 gen lnprice = ln(price)
