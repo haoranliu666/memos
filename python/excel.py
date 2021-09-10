@@ -4,8 +4,8 @@ import xlrd #read
 import xlwt #write
 
 #read
-wb = xlrd.open_workbook("test_r.xlsx")
-sh = wb.sheet_by_name('Sheet1')
+rb = xlrd.open_workbook("test_r.xlsx")
+sh = rb.sheet_by_name('Sheet1')
 sh.cell_value(0, 0)
 sh.row_values(0) 
 sh.col_values(0)
@@ -13,5 +13,5 @@ sh.col_values(0)
 #write
 wb = xlwt.Workbook()
 sh = wb.add_sheet('Sheet1')
-sh1.write(0, 0, 'aaa')
+sh.write(0, 0, 'aaa')
 wb.save('test_w.xls')
