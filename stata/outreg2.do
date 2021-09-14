@@ -15,34 +15,36 @@ outreg2 using result, append dta tstat bdec(3) tdec(2) ctitle($y)
 use result_dta.dta, clear
 export excel using "result"
 
-*多重被解释变量、关键解释变量
+*多重被解释变量、关键解释变量、控制变量、固定效应
 webuse nlswork, clear
 global ylist "ln_wage wks_ue"
 global xlist "age race"
 global control1 "hours union"
 global control2 "ttl_exp tenure"
-foreach y of varlist $ylist{
-	foreach x of varlist $xlist{
+qui foreach y of varlist $ylist{
+	foreach x of varlist $xlist{		
 		reghdfe `y' `x', absorb(year) cluster(idcode)
-		outreg2 using `y'_`x', replace dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time) addstat(Adjusted R-squared, e(r2_a))
+		est store Time1
 		reghdfe `y' `x' $control1, absorb(year) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time) addstat(Adjusted R-squared, e(r2_a))
+		est store Time2
 		reghdfe `y' `x' $control1 $control2, absorb(year) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time) addstat(Adjusted R-squared, e(r2_a))
-		
+		est store Time3
+
 		reghdfe `y' `x', absorb(idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, ID) addstat(Adjusted R-squared, e(r2_a))
+		est store Firm1
 		reghdfe `y' `x' $control1, absorb(idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, ID) addstat(Adjusted R-squared, e(r2_a))
+		est store Firm2
 		reghdfe `y' `x'  $control1 $control2, absorb(idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, ID) addstat(Adjusted R-squared, e(r2_a))
+		est store Firm3
 		
 		reghdfe `y' `x', absorb(year idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
+		est store TimeFirm1
 		reghdfe `y' `x' $control1, absorb(year idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
+		est store TimeFirm2
 		reghdfe `y' `x' $control1 $control2, absorb(year idcode) cluster(idcode)
-		outreg2 using `y'_`x', append dta tstat bdec(3) tdec(2) ctitle(`y') addtext(FE, Time&ID) addstat(Adjusted R-squared, e(r2_a))
+		est store TimeFirm3
+		
+		outreg2 [*] using `y'_`x', replace dta tstat bdec(3) tdec(2)
 	}
 }
 
