@@ -54,7 +54,7 @@ while `j'<5{
 }
 
 *forvalues
-forvalues j = 1/5{
+forvalues j = 1(2)6{
 	dis `j'
 }
 
