@@ -20,4 +20,4 @@ Specific site:
 
 Specific type of file:
 
-- filetype:pdf digital marketing ebook
+- corporate finance filetype:pdf
