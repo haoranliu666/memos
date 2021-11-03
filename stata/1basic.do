@@ -202,3 +202,17 @@ rename *, lower
 
 *每一个x的个数
 bysort x, egen coun = count(_n)
+
+*ttest表格
+logout, excel save(ttest_result) replace: ttable3 $control $dependent, tvalue by(flag)
+
+*取出ttest值，从结果矩阵中
+ttable3 $dependent, by(flag)
+mat A = r(rtable)
+matrix list A
+scalar temp = A[1,2]
+
+*描点图
+twoway (scatteri 50 -3 30 -2 35 -1 2 0 6 1 3 2 5 3, racast(connected)), ///
+    xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2)) ///
+    ytitle("Value") ylable(0(5)20)
