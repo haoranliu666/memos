@@ -1,5 +1,6 @@
 #pickle: save&load python objects
 #https://www.youtube.com/watch?v=Pl4Hp8qwwes
+#能用json优先用json
 
 import pickle
 
