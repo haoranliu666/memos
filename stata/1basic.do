@@ -213,6 +213,4 @@ matrix list A
 scalar temp = A[1,2]
 
 *描点图
-twoway (scatteri 50 -3 30 -2 35 -1 2 0 6 1 3 2 5 3, racast(connected)), ///
-    xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2)) ///
-    ytitle("Value") ylable(0(5)20)
+twoway (scatteri 50 -3 30 -2 35 -1 2 0 6 1 3 2 5 3, recast(connected)), xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2))  ytitle("Value") ylabel(0(5)20)
