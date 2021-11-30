@@ -213,4 +213,14 @@ matrix list A
 scalar temp = A[1,2]
 
 *描点图
-twoway (scatteri 50 -3 30 -2 35 -1 2 0 6 1 3 2 5 3, recast(connected)), xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2))  ytitle("Value") ylabel(0(5)20)
+twoway (scatteri 50 -3 30 -2 35 -1 2 0 6 1 3 2 5 3, recast(connected)), xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2))  ytitle("Value") ylabel(0(5)50)
+
+*描点图 参数版
+twoway (scatteri `=scalar(control_minus3)' -3 `=scalar(control_minus2)' -2 `=scalar(control_minus1)' -1 `=scalar(control_0)' 0, recast(connected)), xtitle("Time") xlabel(-3 "-3" -2 "-2" -1 0 "0" 1 "1" 2 "2" 3 "3") xscale(range(-3.2, 3.2))  ytitle("Value") ylabel(0(5)50)
+
+*提取返回矩阵的元素
+sysuse auto, clear
+ttable3 price mpg weight length, by(foreign)
+mat A = r(rtable)
+matrix list A
+scalar a = A[1,2]
