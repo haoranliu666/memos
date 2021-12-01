@@ -4,6 +4,7 @@ import requests
 
 url = 'baidu.com'
 
+#type about:version in your browser
 headers = {
     'User-Agent':'xxxx'
 }
