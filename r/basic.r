@@ -1,6 +1,15 @@
 ?lm #help lm
 ??lm #search lm
 
+R comment code
+- command + shift + c
+
+Run code
+- command + enter
+
+Install package
+- install.packages("reshape2")
+
 #vectors
 x <- c(10.4, 5.6, 3.1, 6.4, 21.7)
 x <- 1:10
