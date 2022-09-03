@@ -1,6 +1,9 @@
 #####install homebrew
-# https://zhuanlan.zhihu.com/p/111014448
+# https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+uninstall
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
 brew -v
 brew update
