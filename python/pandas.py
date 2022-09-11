@@ -66,3 +66,6 @@ us = pd.read_csv('us-area-code-cities.csv', header=None)
 
 #read stata
 jw_city = pd.read_stata('jw_city.dta')
+
+#read excel
+x = pd.read_excel('xxx.xlsx')
