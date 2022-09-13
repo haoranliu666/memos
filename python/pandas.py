@@ -69,3 +69,11 @@ jw_city = pd.read_stata('jw_city.dta')
 
 #read excel
 x = pd.read_excel('xxx.xlsx')
+
+#save to excel
+df.to_excel('xxx.xlsx')
+
+#append 向下粘贴
+df.append(df2)
+jw_city = pd.read_stata('jw_city.dta'站)
+jw_city = pd.read_stata('jw_city.dta')
