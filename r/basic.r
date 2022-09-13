@@ -35,4 +35,41 @@ x[(!is.na(x))]
 (x+1)[(!is.na(x)) & x>1]
 x[is.na(x)] <- 0
 
-#object
+
+rm(list=ls())
+gc()
+
+for (i in 1:1000) {
+    if (i %% 100 == 0)
+        print(i)
+}
+
+#get file list
+files <- list.files(path = "/Users/haoranliu/download")
+
+#get a row
+dt.dlcon <- dt.dlcon[1,]
+
+#change a var
+data[10, c('price')]
+
+#paste a row
+data = rbind(data, data[1,])
+
+#delete a column
+data$price <- NULL
+
+#split a string
+temp <- strsplit("haoran.txt", ".", fixed = TRUE) 
+temp[[1]][1]
+
+#read a file
+#paste 2 strings
+library("readr") 
+text <-  read_file(file.path(paste("Cleaned/", "file.txt", sep="")))
+
+#save to excel
+#number to string
+#paste 3 strings
+library("writexl")
+write_xlsx(data, paste("result", as.integer(10), as.integer(100), ".xlsx"))
