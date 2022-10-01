@@ -13,6 +13,11 @@ cls
 clear
 clear all
 
+return list
+ereturn list
+matrix list
+
+
 quiet
 
 *csv
