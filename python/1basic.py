@@ -69,6 +69,13 @@ d['Adam'] = 67
 'Thomas' in d
 d.pop('Bob')
 
+fips_iso = pd.read_excel(path + 'fips_iso.xlsx')
+fips = list(fips_iso['fips'])
+iso = list(fips_iso['iso'])
+fips_iso_dict = {}
+for i in range(0, len(fips)):
+    fips_iso_dict[fips[i]] = iso[i]
+
 
 ####### set
 
