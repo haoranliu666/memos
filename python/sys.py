@@ -20,3 +20,8 @@ for file_name in file_list:
     oldname = path + os.sep + file_name
     newname = newpath + os.sep + file_name + '.xml'
     os.rename(oldname,newname)
+
+    
+#read file
+with open(path + file_name, 'r') as f:
+    content = f.read()
