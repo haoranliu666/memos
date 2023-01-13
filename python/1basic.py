@@ -87,6 +87,7 @@ fips_iso_dict = {}
 for i in range(0, len(fips)):
     fips_iso_dict[fips[i]] = iso[i]
 
+reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
 
 ####### set
 
