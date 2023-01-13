@@ -1,4 +1,10 @@
+'''
+Hi
+'''
+
 exit()
+
+dir(xxx)
 
 import re #regualr expression
 pip install numpy
@@ -68,6 +74,11 @@ d['Michael']
 d['Adam'] = 67
 'Thomas' in d
 d.pop('Bob')
+del d['Michael']
+
+for name, age in d:
+    print(name)
+    print(age)
 
 fips_iso = pd.read_excel(path + 'fips_iso.xlsx')
 fips = list(fips_iso['fips'])
@@ -115,8 +126,20 @@ help(yyyyy)
 
 #vscode:
 #ctrl c    强制停止运行代码
+#mac:
+#ctrl z
 
 
+maxval = a if a > b else b
+
+sum([a[i]*b[i] for i in range(len(a))])
+
+{s[0]:s[1] for s in portfolio }
+
+try:
+    pass
+except:
+    print('error')
 
 
 
