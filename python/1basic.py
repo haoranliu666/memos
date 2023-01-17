@@ -4,7 +4,10 @@ Hi
 
 exit()
 
+help(xxx)
 dir(xxx)
+type(xxx)
+vars(xxx)
 
 import re #regualr expression
 pip install numpy
