@@ -19,6 +19,8 @@ stocknames.head()
 query = ("""select permno, ncusip, namedt, nameendt FROM crsp.dsenames""")
 dfdsenames = db.raw_sql(query)
 
+#SELECT columns FROM library.dataset WHERE column1 = value LIMIT 10
+
 #
 db.close()
 
