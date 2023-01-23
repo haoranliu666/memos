@@ -127,3 +127,9 @@ text <-  read_file(file.path(paste("Cleaned/", "file.txt", sep="")))
 #paste 3 strings
 library("writexl")
 write_xlsx(data, paste("result", as.integer(10), as.integer(100), ".xlsx"))
+
+
+
+#regression
+results <- lm(y ~ x1 + x2 + x3)
+summary(results)
