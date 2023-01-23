@@ -1,6 +1,9 @@
 ?lm #help lm
 ??lm #search lm
 
+rm(list=ls())
+gc()
+
 R comment code
 - command + shift + c
 
@@ -22,12 +25,14 @@ log(x) #exp, sin, cos, tan, sqrt
 length(x)
 max(x) #min, sum, prod, mean, var
 sort(x)
+sort(x, decreasing = TRUE)
+which(x == -0.6)
 
 x <- c(1:3, NA)
-is.na(x) #缺失值
+is.na(x)
 x <- c(1:3, NA, 0/0)
-is.nan(y) #not a number
-is.na(y) #NaN is NA
+is.nan(x) #not a number
+is.na(x) #NaN is NA
 
 x[1]
 x[1:3]
@@ -36,9 +41,58 @@ x[(!is.na(x))]
 x[is.na(x)] <- 0
 
 
-rm(list=ls())
-gc()
+#matrixs
+matrix(1.5, nrow=2, ncol=3)
+matrix(c(1,2,3,4,5,6), nrow=2, ncol=3)
+matrix(c(1,2,3,4,5,6), nrow=2, ncol=3, byrow = TRUE)
 
+diag(10)
+diag(1.1, 10)
+diag(c(2,3,4))
+
+x = c(1,2,3)
+y = c(4,5,6)
+z = c(7,8,9)
+a = cbind(x,y,z)
+b = rbind(x,y,z)
+
+library(matlib)
+inv(a)
+
+a[1,2]
+a[1,]
+a[,2]
+a[c(1,2),c(2,3)]
+
+t(a) #transpose
+a*b #element-wise multiplication
+a%*%b #actual matrix multiplication
+
+#data
+getwd()
+setwd("/xx")
+data <- read.csv("xx.csv", header = TRUE)
+
+nrow(data)
+ncol(data)
+colnames(data)
+
+summary(data)
+summary(data$var1)
+summary(data[c("var1", "var2")])
+
+subset(data, select = c("var1", "var2"))
+
+mean(data$var1[data$var2>3 & data$var2<1.2])
+
+table(data$var1)
+
+plot(data$var1, data$var2)
+plot(data$var1, data$var2, xlab = "aaa", ylab = "bbb", main = "xxx")
+
+data$var1square <- data$var1 * data$var1
+
+#
 for (i in 1:1000) {
     if (i %% 100 == 0)
         print(i)
