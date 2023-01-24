@@ -9,6 +9,9 @@
 help
 search // same as findit
 
+which reg
+which q
+
 cls
 clear
 clear all
