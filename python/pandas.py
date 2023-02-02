@@ -77,3 +77,7 @@ df.to_excel('xxx.xlsx')
 df.append(df2)
 jw_city = pd.read_stata('jw_city.dta'站)
 jw_city = pd.read_stata('jw_city.dta')
+
+
+#merge
+dfconstant = dfconstant.merge(permno_year_icode500, left_on = ['permno', 'year'], right_on = ['permno', 'year'])
