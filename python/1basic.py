@@ -200,3 +200,9 @@ next(f)
 for i, t in enumerate( ['Haoran', 'Liu', 'Macbook']):
     print(i)
     print(i)
+    
+#string
+import string
+string.digits
+string.punctuation
+string.ascii letters
