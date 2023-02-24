@@ -205,4 +205,4 @@ for i, t in enumerate( ['Haoran', 'Liu', 'Macbook']):
 import string
 string.digits
 string.punctuation
-string.ascii letters
+string.ascii_letters
