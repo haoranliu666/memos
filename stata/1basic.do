@@ -232,3 +232,22 @@ ttable3 price mpg weight length, by(foreign)
 mat A = r(rtable)
 matrix list A
 scalar a = A[1,2]
+
+*read all files from a folder
+local files: dir "aa/bb/cc" files "*.csv"
+
+foreach file in `files' {
+	import delimited using "`file'", varnames(1) clear
+}
+
+
+*skip if some variable is missing
+capture confirm variable port01 port02 port03 port04 port05 port06 port07 port08 port09 port10
+	if _rc != 0{
+	   continue
+	}
+	
+*export matrix to a excel
+qui corr r1 r2 r3 r4 r5 r6 r7 r8 r9 r10
+putexcel set aa/bb/cc.xlsx, replace
+putexcel A1 = matrix(r(C))
