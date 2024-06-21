@@ -18,7 +18,7 @@ Data on top 5 executive officers compensation from DEF14A (some up to 9)
 
 
 
-IDs:
+#### IDs:
 
 EXECID: permanent id for each executive, it stays the same throughout her career.
 
@@ -35,7 +35,7 @@ If the CEO is chairman: The best way to get this information is to use either th
 
 
 
-Change of accounting standard in 2006 (FAS 123R)
+#### Change of accounting standard in 2006 (FAS 123R)
 
 - Main compensation item TDC1 for TOTAL compensation has continuity.
 
@@ -48,7 +48,7 @@ Under this new reporting regime:
 
 
 
-Vars
+#### Vars
 
 Total Compensation Including Option Grant      Variable Name = TDC1
 
@@ -68,7 +68,7 @@ Total Value of Stock Options Granted    Variable Name = OPTION_AWARDS
 
 
 
-Fiscal year: link ExecuComp to Compustat
+##### Fiscal year: link ExecuComp to Compustat
 
 “Year” in Execucomp is based on fiscal year. Compustat defines a fiscal year based on the FYR value.
 
@@ -80,7 +80,7 @@ For example, for a fiscal year ending in Feb, 2002, the fiscal year assigned wou
 
 
 
-Sudo code for link Compustat and ExecuComp
+##### Sudo code for link Compustat and ExecuComp
 
 In Compustat
 
