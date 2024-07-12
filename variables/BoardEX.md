@@ -65,3 +65,71 @@ numberdirectors: Number of Directors on Board (numberdirectors)
 ned: Non-Executive Director
 
 rolename
+
+### BoardEx CRSP Compustat Link from WRDS
+
+https://wrds-www.wharton.upenn.edu/pages/get-data/linking-suite-wrds/boardex-crsp-compustat-link/
+
+link Permco (or GVKEY) to companyid from BoardEx
+
+
+
+#### Score
+
+score = 1 :
+
+CUSIP Issuer/CIK/Ticker match and Acceptable Fuzzy Matching (SAS spedis <10)
+
+score = 2 :
+
+CUSIP Issuer/CIK/Ticker match
+
+score = 3 :
+
+CUSIP Issuer/CIK match or
+
+CUSIP Issuer/Ticker match or
+
+CIK/Ticker match
+
+score = 4:
+
+CUSIP Issuer match
+
+score = 5 :
+
+Ticker/Identical Company Name match or
+
+CIK/Phone-Fax number match
+
+score = 6 :
+
+CIK Match
+
+score = 7 :
+
+Ticker match and Acceptable Fuzzy Matching (SAS spedis <10) score = 8 :
+
+Phone-fax match number match and Acceptable Fuzzy Matching (SAS spedis <10)
+
+score = 9 :
+
+More Acceptable Fuzzy Matching (SAS spedis <5)
+
+score =10 :
+
+Less Acceptable Fuzzy Matching (SAS spedis >5 and spedis <10)
+
+##### preferred
+
+It is equal to 1 if:
+
+1. ﻿﻿﻿PERMCO does not have duplicates.
+2. ﻿﻿﻿PERMCO has duplicates but its score is the lowest when compared with scores of the duplicates.
+
+##### Duplicate
+
+It is equal to 1 when a given PERMCO has more than one Boardex Company ID or Compustat GVKEY match. Otherwise, it is Zero.
+
+
+
