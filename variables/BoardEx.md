@@ -133,3 +133,7 @@ It is equal to 1 when a given PERMCO has more than one Boardex Company ID or Com
 
 
 
+### WRDS People Link
+https://wrds-www.wharton.upenn.edu/pages/get-data/linking-suite-wrds/wrds-people-link/
+
+
